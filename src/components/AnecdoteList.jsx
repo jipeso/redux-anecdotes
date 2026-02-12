@@ -1,4 +1,6 @@
 import { useDispatch, useSelector } from "react-redux"
+import PropTypes from "prop-types"
+
 import { voteAnecdote } from "../reducers/anecdoteReducer"
 import { setNotification } from "../reducers/notificationReducer"
 
@@ -37,6 +39,11 @@ const AnecdoteList = () => {
       </ul>      
     </div>
   )
+}
+
+Anecdote.propTypes = {
+  anecdote: PropTypes.object.isRequired,
+  handleClick: PropTypes.func.isRequired
 }
 
 export default AnecdoteList

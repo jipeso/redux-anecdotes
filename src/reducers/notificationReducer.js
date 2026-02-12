@@ -9,7 +9,7 @@ const notificationSlice = createSlice({
     showNotification(state, action) {
       return action.payload
     },
-    hideNotification(state, action) {
+    hideNotification() {
       return ''
     }
   }

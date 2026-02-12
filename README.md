@@ -1,8 +1,12 @@
-# React + Vite
+# Full stack open redux-anecdotes CI/CD
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository is used for the exercise 11.20 of the Full stack open course.
 
-Currently, two official plugins are available:
+## Commands
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Start by running `npm install` inside the project folder
+
+`npm run dev` to run the webpack dev server
+`npm run lint` to run eslint
+`npm run build` to make a production build
+`npm run start` to run your production build

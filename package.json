@@ -4,11 +4,12 @@
   "version": "0.2.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently --kill-others \"npm run server\" \"vite\"",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "server": "json-server -p3001 --watch anecdotes.json"
+    "server": "json-server -p3001 --watch anecdotes.json",
+    "start": "concurrently --kill-others \"npm run server\" \"npm run preview\""
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.0",
@@ -16,6 +17,8 @@
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.5.1",
     "axios": "^1.8.1",
+    "concurrently": "^9.2.1",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.1.3",
