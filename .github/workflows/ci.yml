@@ -34,24 +34,22 @@ jobs:
           curl "$deploy_url"
       
       - name: Discord success notification
-        uses: rjstone/discord-webhook-notify@c2597273488aeda841dd1e891321952b51f7996f
+        uses: tsickert/discord-webhook@b217a69502f52803de774ded2b1ab7c282e99645
         if: ${{ success() && env.NON_SKIP_PR == 'true' }}
         with:
-          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+          webhook-url: ${{ secrets.DISCORD_WEBHOOK }}
           username: 'Deployment Bot'
-          text: 'A new version of Pokedex deployed'
-          severity: 'info'
-          description: 'to ${{ secrets.RENDER_URL }} by ${{ github.actor }}'
+          embed-title: 'A new version of Pokedex deployed'
+          embed-description: 'to ${{ secrets.RENDER_URL }} by ${{ github.actor }}'
 
       - name: Discord failure notification
-        uses: rjstone/discord-webhook-notify@c2597273488aeda841dd1e891321952b51f7996f
+        uses: tsickert/discord-webhook@b217a69502f52803de774ded2b1ab7c282e99645
         if: ${{ failure() && env.NON_SKIP_PR == 'true' }}
         with:
-          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+          webhook-url: ${{ secrets.DISCORD_WEBHOOK }}
           username: 'Deployment Bot'
-          text: 'Deployment failed'
-          severity: 'error'
-          description: 'commit ${{ github.event.head_commit.url }} by ${{ github.event.head_commit.author.username }} broke the build'
+          embed-title: 'Deployment failed'
+          embed-description: 'commit ${{ github.event.head_commit.url }} by ${{ github.event.head_commit.author.username }} broke the build'
 
   tag_release:
     needs: [simple_deployment_pipeline]
