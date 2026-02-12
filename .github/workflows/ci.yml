@@ -35,7 +35,7 @@ jobs:
       
       - name: Discord success notification
         uses: rjstone/discord-webhook-notify@c2597273488aeda841dd1e891321952b51f7996f
-        if: success()
+        if: ${{ success() && env.NON_SKIP_PR == 'true' }}
         with:
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
           username: 'Deployment Bot'
@@ -45,7 +45,7 @@ jobs:
 
       - name: Discord failure notification
         uses: rjstone/discord-webhook-notify@c2597273488aeda841dd1e891321952b51f7996f
-        if: failure()
+        if: ${{ failure() && env.NON_SKIP_PR == 'true' }}
         with:
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
           username: 'Deployment Bot'
