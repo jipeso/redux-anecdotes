@@ -39,7 +39,7 @@ jobs:
         with:
           webhook-url: ${{ secrets.DISCORD_WEBHOOK }}
           username: 'Deployment Bot'
-          embed-title: 'A new version of Pokedex deployed'
+          embed-title: 'A new version of redux-anecdotes deployed'
           embed-description: 'to ${{ secrets.RENDER_URL }} by ${{ github.actor }}'
 
       - name: Discord failure notification
