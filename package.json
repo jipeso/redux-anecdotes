@@ -4,12 +4,11 @@
   "version": "0.2.0",
   "type": "module",
   "scripts": {
-    "dev": "vite & npm run server",
+    "dev": "vite",
     "build": "vite build",
-    "start": "npm run preview & npm run server",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "server": "json-server -p3001 anecdotes.json"
+    "start": "json-server -p3001 anecdotes.json --static dist"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.0",
