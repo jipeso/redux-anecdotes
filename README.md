@@ -2,6 +2,8 @@
 
 This repository is used for the exercise 11.20 of the Full stack open course.
 
+Render deployment: https://redux-anecdotes-gofq.onrender.com
+
 ## Commands
 
 Start by running `npm install` inside the project folder
